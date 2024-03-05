@@ -1,0 +1,135 @@
+/* NORMALIZE --------------------------------------------------*/
+* {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu;
+  font-size: 16px;
+  border-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  min-width: auto;
+  user-select: none;
+  appearance: none;
+  line-height: 1;
+  transition: 0.1s;
+  &:focus {outline: solid 2px var(--main);}
+}
+
+p {color: var(--mainLight);}
+a {cursor: pointer; font-weight: 500; color: var(--beige);}
+
+h1,h2,h3,h4,h5,h6,p {
+  text-wrap: pretty;
+  user-select: auto;
+  text-align: center;
+}
+
+body {min-height: 100dvh;}
+/* NORMALIZE --------------------------------------------------*/
+/* ROOT -------------------------------------------------------*/
+:root {
+  --main: #4C6F5A;
+  --mainLight: #9bafa3;
+  --mainDark: #2D463B;
+  --beige: #F7F2F2;
+  --white: #FFFFFF;
+  --dark: #10161a;
+  background-color: var(--dark);
+}
+/* ROOT -------------------------------------------------------*/
+/* COMPONENTS -------------------------------------------------*/
+.Header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 1000;
+  place-items: center;
+  >.ImageTitle {
+    > img {max-height: 80px;}
+  }
+  >.TextTitle {
+    display: flex;
+    font-weight: 900;
+    >h1{font-size: 3em; color: var(--main);}
+    >span{font-size: 3em; color: var(--mainLight); line-height: 0.9;}
+  }
+}
+/* COMPONENTS -------------------------------------------------*/
+/* ELEMENTS ---------------------------------------------------*/
+.Button, .Select, .Dropdown, .Checkbox {
+  cursor: pointer;
+  transition: 0.1s;
+  max-width: fit-content;
+}
+
+.Button, .Dropdown, .Select {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  z-index: 50;
+  &:hover {outline: solid 2px var(--mainLight);}
+  &:active {background-color: var(--main); outline: none;}
+  z-index: 50;
+  > div {
+    top: 45px;
+    left: 0px;
+    z-index: 100;
+    padding: 7px;
+    position: absolute;
+    z-index: 40;
+    > a {
+      outline: none;
+      display: block;
+      padding: 5px 20px;
+      &:hover {background-color: var(--mainLight); color: var(--beige);}
+    }
+  }
+}
+
+.Checkbox, .Label, .Form, .Switch {
+  max-width: fit-content;
+  > Label {
+    cursor: pointer;
+    color: var(--mainLight);
+    Input {
+      cursor: pointer;
+      min-height: 14px;
+      min-width: 14px;
+      margin-right: 4px;
+      border-radius: 4px;
+      background-color: var(--dark);
+      outline: solid 1px var(--mainLight);
+      &:hover {outline: solid 2px var(--mainLight);}
+      &:active {outline: solid 1px var(--mainLight);}
+      &:checked {background-color: var(--mainLight);}
+    }
+  }
+  > Input {
+    outline: none;
+    font-style: italic;
+    background-color: transparent; 
+    color: var(--beige);  
+    &::placeholder{color: var(--beige); opacity: 80%;}
+  }
+  > b {color: var(--beige);}
+}
+/* ELEMENTS ---------------------------------------------------*/
+/* STYLES -----------------------------------------------------*/
+.Small {padding: 4px 6px; font-size: 10px;}
+.Medium {padding: 12px 14px;}
+.Big {padding: 20px 24px;}
+
+.Solid {background-color: var(--main); color: var(--mainLight); outline: none; >Input::placeholder{color: var(--beige); opacity: 80%;}}
+.Contained {background-color: var(--mainDark); color: var(--mainLight); outline: solid 1px var(--mainLight);}
+.Ghost {background-color: transparent; color: var(--mainLight); outline: none;}
+.Outlined {background-color: transparent; color: var(--mainLight); outline: solid 1px var(--mainLight);}
+
+.Default {border-radius: 4px;}
+.Brick {border-radius: 0;}
+.Rounded {border-radius: 32px;}
+/* STYLES -----------------------------------------------------*/
+/* RESPONSIVE -------------------------------------------------*/
+/* RESPONSIVE -------------------------------------------------*/
